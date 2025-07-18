@@ -45,6 +45,5 @@ class ProductRepositoryTest {
         Product gpu = new Product("RTX 5060", 19000);
         prodRep.save(gpu);
         assertEquals(gpu.hashCode(), prodRep.findById(4L).hashCode());
-        System.out.println(prodRep.findAll());
     }
 }
