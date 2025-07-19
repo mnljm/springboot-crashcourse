@@ -1,5 +1,7 @@
 package com.example.demo.myfirstapi.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Objects; // Used for Objects.hash and Objects.equals
 
 public class Product {
@@ -8,14 +10,15 @@ public class Product {
     private String name;
     private double price;
 
+
     // Constructor to create new Product objects (without ID initially)
-    public Product(String name, double price) {
+    public Product(@JsonProperty("name") String name, @JsonProperty("price")double price) {
         this.name = name;
         this.price = price;
     }
 
     // Constructor to create Product objects with an ID (e.g., when loading from storage)
-    public Product(Long id, String name, double price) {
+    public Product(@JsonProperty("id") Long id, @JsonProperty("name") String name, @JsonProperty("price") double price) {
         this.id = id;
         this.name = name;
         this.price = price;
